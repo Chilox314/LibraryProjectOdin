@@ -18,6 +18,13 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 //just some dummy books
+// addBookToLibrary("HP","JKR","300","Read")
+// addBookToLibrary("HPA","JKR","300","Read")
+// addBookToLibrary("HPB","JKR","300","Read")
+// addBookToLibrary("HPC","JKR","300","Read")
+// addBookToLibrary("HPD","JKR","300","Read")
+// addBookToLibrary("HPE","JKR","300","Read")
+// addBookToLibrary("HPF","JKR","300","Read")
 
 
 //renders the information for each book on screen
@@ -49,6 +56,8 @@ function createLibrary() {
   // for (const book of myLibrary) {
   //   renderBook(book);
   // }
-  myLibrary.forEach(book => renderBook(book))
+  for (let i = 0; i < myLibrary.length - 1; i++) {
+    console.log(myLibrary[i]);
+  }
 }
 
