@@ -46,8 +46,9 @@ function renderBook(book) {
 
 //loops through library and calls renderBook() for each book
 function createLibrary() {
-  for (const book of myLibrary) {
-    renderBook(book);
-  }
+  // for (const book of myLibrary) {
+  //   renderBook(book);
+  // }
+  myLibrary.forEach(book => renderBook(book))
 }
 
