@@ -1,5 +1,7 @@
 let myLibrary = [];
 
+const bookShelf = document.getElementById("bookshelf");
+
 //constructor for each new book
 function Book(title, author, pages, read) {
         this.title = title;
@@ -12,24 +14,38 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
   let newBook = new Book(title, author, pages, read);  
   myLibrary.push(newBook);
+  createLibrary(myLibrary);
 }
 
 //just some dummy books
-addBookToLibrary("HP","JKR","300","Read")
-addBookToLibrary("HPA","JKR","300","Read")
-addBookToLibrary("HPB","JKR","300","Read")
-addBookToLibrary("HPC","JKR","300","Read")
-addBookToLibrary("HPD","JKR","300","Read")
-addBookToLibrary("HPE","JKR","300","Read")
-addBookToLibrary("HPF","JKR","300","Read")
+
 
 //renders the information for each book on screen
 function renderBook(book) {
+  const bookWrapper = document.createElement("div");
+  bookWrapper.classList.add("bookWrapper");
+
+  const title = document.createElement("p")
+  const author = document.createElement("p")
+  const pages = document.createElement("p")
+  const read = document.createElement("p")
+
+  title.textContent = book.title;
+  author.textContent = book.author;
+  pages.textContent = book.pages;
+  read.textContent = book.read;
+
+  bookWrapper.appendChild(title);
+  bookWrapper.appendChild(author);
+  bookWrapper.appendChild(pages);
+  bookWrapper.appendChild(read);
+
+  bookShelf.appendChild(bookWrapper);
   
 }
 
 //loops through library and calls renderBook() for each book
-function createLibrary(myLibrary) {
+function createLibrary() {
   for (const book of myLibrary) {
     renderBook(book);
   }

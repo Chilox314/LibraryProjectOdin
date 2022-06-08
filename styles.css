@@ -9,7 +9,7 @@ html, body {
     width: 100vw;
 }
 
-.library {
+.bookshelf {
     height: 100vh;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
