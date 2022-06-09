@@ -53,11 +53,29 @@ function renderBook(book) {
 
 //loops through library and calls renderBook() for each book
 function createLibrary() {
-  // for (const book of myLibrary) {
-  //   renderBook(book);
-  // }
-  for (let i = 0; i < myLibrary.length - 1; i++) {
-    console.log(myLibrary[i]);
+  bookShelf.innerHTML = "";
+  for (const book of myLibrary) {
+    renderBook(book);
   }
 }
 
+//UI
+const addBtn = document.getElementById("addBtn");
+
+addBtn.addEventListener("click", () => {
+  const titleInput = document.getElementById("titleInput").value;
+  const authorInput = document.getElementById("authorInput").value;
+  const pagesInput = document.getElementById("pagesInput").value;
+  let readInput;
+
+  if(document.getElementById("readInput").checked) {
+    readInput = "read"
+  }
+  else {
+    readInput = "not read"
+  }
+  addBookToLibrary(titleInput, authorInput, pagesInput, readInput)
+
+  //reset input
+  document.getElementById("addBooksForm").reset();
+});

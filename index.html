@@ -8,14 +8,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="library">
-        <div class="bookshelf" id="bookshelf">
-            <div class="bookWrapper"></div>
-            <div class="bookWrapper"></div>
-            <div class="bookWrapper"></div>
-            <div class="bookWrapper"></div>
+    <div class="bodyWrapper">
+
+        <div class="header">
+
+        </div>
+
+        <div class="addBooks">
+
+            <form id="addBooksForm">
+
+                <input type="text" name="title" id="titleInput">
+
+                <input type="text" name="author" id="authorInput">
+
+                <input type="number" name="pages" id="pagesInput">
+
+                <div class="readWrapper">
+
+                    <label for="read">Have you read the book?</label>
+                    <input type="checkbox" name="read" id="readInput">
+
+                </div>
+
+                <button class="button" id="addBtn">Add Book</button>
+
+            </form> 
+
+        </div>
+
+        <div class="library">
+
+            <div class="bookshelf" id="bookshelf">
+        
+            </div>
+
+        </div>
+
+        <div class="footer">
+
         </div>
     </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
