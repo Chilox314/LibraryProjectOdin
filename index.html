@@ -12,17 +12,41 @@
         
         <div class="header">
 
+            <div class="heading">
+                <div class="logo"></div>
+                <p>My Library</p>
+            </div>
+            <div class="profile">
+                <div class="logo"></div>
+                <button>Log out</button>
+            </div>
+
         </div>
 
         <div class="addBooks">
 
             <form id="addBooksForm">
 
-                <input type="text" name="title" id="titleInput">
+                <div class="titleWrapper">
+                    
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="titleInput">
 
-                <input type="text" name="author" id="authorInput">
+                </div>
 
-                <input type="number" name="pages" id="pagesInput">
+                <div class="authorWrapper">
+
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="authorInput">
+
+                </div>
+
+                <div class="pagesWrapper">  
+
+                    <label for="pages">Pages:</label>
+                    <input type="number" name="pages" id="pagesInput">
+
+                </div>
 
                 <div class="readWrapper">
 
@@ -37,6 +61,8 @@
 
             <button class="button" id="resetAll">Reset all</button>
 
+            <button id="dummy">dummy</button>
+
         </div>
 
         <div class="library">
@@ -48,6 +74,8 @@
         </div>
 
         <div class="footer">
+
+            Copyright &copy; Christian Henningsen
 
         </div>
     </div>
