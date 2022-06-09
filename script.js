@@ -61,6 +61,7 @@ function createLibrary() {
 
 //UI
 const addBtn = document.getElementById("addBtn");
+const resetAllBtn = document.getElementById("resetAll");
 
 addBtn.addEventListener("click", () => {
   const titleInput = document.getElementById("titleInput").value;
@@ -68,14 +69,22 @@ addBtn.addEventListener("click", () => {
   const pagesInput = document.getElementById("pagesInput").value;
   let readInput;
 
+  //get checkbox value
   if(document.getElementById("readInput").checked) {
     readInput = "read"
   }
   else {
     readInput = "not read"
   }
+
   addBookToLibrary(titleInput, authorInput, pagesInput, readInput)
 
   //reset input
   document.getElementById("addBooksForm").reset();
 });
+
+//hard reset for full library
+resetAllBtn.addEventListener("click", () => {
+  bookShelf.innerHTML = "";
+  myLibrary = []
+})
