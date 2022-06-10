@@ -32,12 +32,12 @@ function addBookToLibrary(title, author, pages, read) {
 const dummy = document.getElementById("dummy") 
 dummy.addEventListener("click", () => {
   addBookToLibrary("HP","JKR","300","Read")
-  addBookToLibrary("HPA","JKR","300","Read")
-  addBookToLibrary("HPB","JKR","300","Read")
-  addBookToLibrary("HPC","JKR","300","Read")
-  addBookToLibrary("HPD","JKR","300","Read")
-  addBookToLibrary("HPE","JKR","300","Read")
-  addBookToLibrary("HPF","JKR","300","Read")
+  // addBookToLibrary("HPA","JKR","300","Read")
+  // addBookToLibrary("HPB","JKR","300","Read")
+  // addBookToLibrary("HPC","JKR","300","Read")
+  // addBookToLibrary("HPD","JKR","300","Read")
+  // addBookToLibrary("HPE","JKR","300","Read")
+  // addBookToLibrary("HPF","JKR","300","Read")
 })
 
 
@@ -49,8 +49,13 @@ function renderBook(book) {
   const title = document.createElement("p")
   const author = document.createElement("p")
   const pages = document.createElement("p")
+  const dummy = document.createElement("p")
   const read = document.createElement("button")
   const removeBtn = document.createElement("button")
+
+  read.classList.add("button","read");
+
+  removeBtn.classList.add("button","remove");
 
   //give remove btn data identify
   const dataAttr = document.createAttribute("data-id");
@@ -78,6 +83,7 @@ function renderBook(book) {
   bookWrapper.appendChild(title);
   bookWrapper.appendChild(author);
   bookWrapper.appendChild(pages);
+  bookWrapper.appendChild(dummy);
   bookWrapper.appendChild(read);
   bookWrapper.appendChild(removeBtn);
 
@@ -113,7 +119,9 @@ addBtn.addEventListener("click", () => {
 
   if (titleInput === "" || authorInput === "" || pagesInput === "") {
     //error message
-    alert("Please fill out all the inputs!")
+    document.getElementById("titleInput").style.border = "1.5px #fca5a5 solid";
+    document.getElementById("authorInput").style.border = "1.5px #fca5a5 solid";
+    document.getElementById("pagesInput").style.border = "1.5px #fca5a5 solid";
   }
   else {
     addBookToLibrary(titleInput, authorInput, pagesInput, readInput);
